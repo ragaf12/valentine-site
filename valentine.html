@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Be My Valentine? 💍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Will You Be My Valentine? 💘</h1>
+
+<button class="yes-button" onclick="yesClick()">Yes 💖</button>
+<button class="no-button" onclick="noClick()">No 😢</button>
+
+<script>
+let messageIndex = 0;
+
+const messages = [
+  "Are you sure? 🥺",
+  "Really sure? 😭",
+  "Think again 💔",
+  "Pleaseee 💕",
+  "Don't break my heart 😭"
+];
+
+function noClick() {
+  const noBtn = document.querySelector('.no-button');
+  const yesBtn = document.querySelector('.yes-button');
+
+  noBtn.textContent = messages[messageIndex];
+  messageIndex = (messageIndex + 1) % messages.length;
+
+  const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
+  yesBtn.style.fontSize = (currentSize * 1.4) + "px";
+}
+
+function yesClick() {
+  window.location.href = "yes.html";
+}
+</script>
+
+<br><br>
+<a href="index.html">⬅ Back Home</a>
+
+</body>
+</html>
